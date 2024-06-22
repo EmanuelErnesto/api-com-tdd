@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+
+  postgres:
+    image: postgres
+    restart: always
+    container_name: api-tdd-db
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=pgpassword
+      - POSTGRES_DB=apitdd
+    volumes:
+      - .docker/dbdata:/var/lib/postgresql/data
